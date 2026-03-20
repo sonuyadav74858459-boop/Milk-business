@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥛 ताज़ा देशी गाय का दूध - होम डिलीवरी</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #fff8e1, #f1f8e9); color: #333; }
+        .header { background: linear-gradient(90deg, #4caf50, #81c784); color: white; text-align: center; padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .rates { background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .rate-card { background: #e8f5e8; border-left: 5px solid #4caf50; padding: 1.5rem; margin: 1rem 0; border-radius: 10px; }
+        .order-form { background: #fff; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        input, select, button { width: 100%; padding: 1rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1rem; }
+        button { background: #4caf50; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #45a049; }
+        .whatsapp { background: #25D366; color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 50px; display: inline-block; font-size: 1.2rem; margin: 1rem 0; }
+        @media (max-width: 768px) { .container { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🥛 <strong>ताज़ा देशी गाय का दूध</strong></h1>
+        <p>🌿 100% Pure | A2 Desi | होम डिलीवरी | रोज़ सुबह 6 बजे</p>
+    </div>
+
+    <div class="container">
+        <!-- Rates Section -->
+        <div class="rates">
+            <h2>💰 आज के रेट (प्रति लीटर)</h2>
+            <div class="rate-card">
+                <h3>🥛 साधारण दूध - ₹65/लीटर</h3>
+                <p>ताज़ा | गाय का | रोज़ सुबह</p>
+            </div>
+            <div class="rate-card">
+                <h3>🥛 A2 गोल्ड दूध - ₹85/लीटर</h3>
+                <p>देशी नस्ल | सबसे शुद्ध</p>
+            </div>
+            <div class="rate-card">
+                <h3>🧈 घी - ₹650/किलो</h3>
+                <p>देशी गाय का | बिल्कुल pure</p>
+            </div>
+            <p style="text-align:center; font-size:1.2rem; color:#4caf50;"><strong>रेट कभी भी बदल सकते हैं - व्हाट्सएप पर confirm करें!</strong></p>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-form">
+            <h2>📱 ऑर्डर करें (30 सेकंड में)</h2>
+            <form>
+                <input type="text" placeholder="आपका नाम" required>
+                <input type="tel" placeholder="मोबाइल नंबर" required>
+                <input type="text" placeholder="पूरा पता" required>
+                <select required>
+                    <option value="">दूध का प्रकार चुनें</option>
+                    <option>साधारण दूध (₹65/L)</option>
+                    <option>A2 गोल्ड (₹85/L)</option>
+                    <option>घी (₹650/Kg)</option>
+                </select>
+                <input type="number" placeholder="मात्रा (लीटर/किलो)" required>
+                <input type="datetime-local" placeholder="डिलीवरी तारीख/समय">
+                <button type="button" onclick="orderWhatsApp()">🚀 अभी ऑर्डर करें (WhatsApp)</button>
+            </form>
+            
+            <a href="https://wa.me/91YOURNUMBER?text=🥛%20दूध%20ऑर्डर%20करना%20है..." class="whatsapp" target="_blank">
+                📲 सीधे WhatsApp पर बात करें
+            </a>
+        </div>
+
+        <!-- About & Contact -->
+        <div style="background:white; padding:2rem; border-radius:15px; margin:2rem 0; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+            <h2>🙏 हमारे बारे में</h2>
+            <p>✅ 100% Pure Desi Cow Milk<br>
+            ✅ अपने फार्म से सीधा<br>
+            ✅ No chemicals | No adulteration<br>
+            ✅ 5km radius में Free Delivery</p>
+            <p><strong>📞 कॉल/व्हाट्सएप: +917485845942</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function orderWhatsApp() {
+            const name = document.querySelector('input[type="text"]').value;
+            const phone = document.querySelector('input[type="tel"]').value;
+            const address = document.querySelectorAll('input')[2].value;
+            const product = document.querySelector('select').value;
+            const qty = document.querySelector('input[type="number"]').value;
+            
+            const message = `🥛 नया ऑर्डर!\n👤 नाम: ${name}\n📱 फोन: ${phone}\n📍 पता: ${address}\n🛒 प्रोडक्ट: ${product}\n📦 मात्रा: ${qty}L\n\nकृपया confirm करें!`;
+            
+            window.open(`https://wa.me/91YOURNUMBER?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
